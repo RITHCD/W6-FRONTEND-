@@ -1,5 +1,14 @@
 
 function Scores({ courseName, courseResults }) {
+    
+    // statistics
+    const scores = courseResults.map(result => result.score);
+    const average = (
+        scores.reduce((sum, score) => sum + score, 0) / scores.length
+    ).toFixed(1);
+
+    const min = Math.min(...scores);
+    const max = Math.max(...scores);
     return (
         
         <div className="scores">
@@ -14,6 +23,7 @@ function Scores({ courseName, courseResults }) {
             </thead>
             <tbody>
             {courseResults.map((result, index) => (
+
                 <tr key={index}>
         
                 <td>{result.firstName}</td>
@@ -23,6 +33,12 @@ function Scores({ courseName, courseResults }) {
             ))}
             </tbody>
         </table>
+        {/* STATISTICS PANEL */}
+        <div className="stats">
+            <p>Average: {average}</p>
+            <p>Min: {min}</p>
+            <p>Max: {max}</p>
+        </div>
         </div>
     );
     }
