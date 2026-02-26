@@ -2,7 +2,7 @@ export const JAVA_RESULTS = [
   {
     firstName: "SOKUNTHEA",
     lastName: "POEUN",
-    score: 45,
+    score: 50,
   },
   {
     firstName: "NY",
